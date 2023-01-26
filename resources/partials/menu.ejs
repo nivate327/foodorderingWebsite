@@ -1,0 +1,22 @@
+<section id="menu-section">
+    <!-- Menu 1-->
+    <h2> Menu </h2>
+
+    <div class="menu-1">
+        <% food.forEach(function(food) {%>
+
+       
+        <div class="card" id="card1">
+            <img src="/img/<%= food.image %>" alt="hi" class="p"></img>
+            <h3><%= food.name %></h3>
+            <div class="order-price">
+                <p>Rs- <span id="price"><%= food.price %></span></p>
+                <a href="/<%= food.link %>/<%= food._id %>"><button class="add-btn"> Add </button></a>
+            </div>
+        </div>
+
+        <% }) %> 
+       
+    </div>
+
+</section>

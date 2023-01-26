@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/link.ejs') %>
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+    <body>
+    <!--header section-->
+    <%- include('../partials/header.ejs') %>
+    <!--cart section-->
+
+    
+    <section>
+        
+      <% if(session.cart) { %>
+        <div class="order">
+            <div class="order-head">
+                <img src="img/cart-black.png" id="cart-img" alt="">
+                <h1 id="o">Order summary</h1>
+            </div>
+
+            <div class="food-list">
+            <% for(let food of Object.values(session.cart.items)) { %>
+
+               <div class="items">
+                    <div class="food">
+                        <img src="img/<%= food.items.image %>" class="img" alt="">
+                        <h3 class="f-name"><%= food.items.name %></h3>
+                    </div>
+                    <span><%= food.items.qty %> Pcs</span>
+                    <span class="price">Rs - <%= food.items.price  %></span>
+               </div>
+
+             <% } %>
+            </div>
+
+             <hr>
+            <div class="cal">
+                <div class="cal2">
+                    <span>Total Amount:</span>
+                    <span class="amt">Rs - <%= session.cart.totalPrice %></span>
+                </div>
+
+                <% if(user) { %>
+                <div>   
+                    <form action="/orders" method="POST">
+                        <input type="text" placeholder="Phone No" class="input" name="phone">
+                        <input type="text" placeholder="Address" class="input" name="address">
+                        
+                        <div>
+                            <button id="orderNow" type="submit">OrderNow</button>
+                        </div>
+                    </form>
+                </div>
+                <% } else { %>
+                    <div>
+                        <a href="/login"><button id="loginfirst"> Login </button></a>
+                    </div>
+                <% } %>
+            </div>
+
+            
+        </div>
+        <% } else { %>
+       <div>
+            <div class="empcart-head">
+            <h1 class="cart-head">Cart Empty</h1>
+            <img src="img/upset-emoji.png" id="upset" alt="upset">
+            </div>
+         <p>You probably haven't ordered a food yet. <br>
+            To order a food, go to the main page.</p>
+         <img src="img/empty-cart.png" id="emp" alt="empty-cart">
+         <br>
+         <a href="/category" id="btn">Go to Menu</a>
+      </div>
+
+      <% } %>
+    </section>
+    <script src="/js/responsive.js"></script>
+    
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<nav class="background">
+  <div class="logo">
+    <i class="fa fa-cutlery" aria-hidden="true"></i>
+    <a href="/" id="a"><h3>Taste</h3></a>
+  </div>
+
+  <div>
+      <ul class="nav-items slidebar">
+        <li><a href="javascript:void(0)" class="closebtn">&times;</a></li>
+          <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+          <li><a href="#menu-section"><i class="fas fa-ellipsis-h"></i>Menu</a></li>
+          <li><a href="/category"><i class="fas fa-hamburger"></i>Category</a></li>
+
+          <% if(user) { %>
+            
+          <li>
+            <form action="/logout" method="post" id="logout">
+              <a onclick="document.getElementById('logout').submit()" href="#"><i class="fas fa-address-book"></i>Logout</a></li>
+           </form>
+            
+          <% } else { %>
+            <li><a href="/ragister"><i class="fas fa-address-book"></i>Ragister</a></li>
+          <li><a href="/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+          <% } %>
+          <form action="/searchfood" method="POST">
+          <li><input type="text" id="search"  placeholder="search" name="search" onchange="this.form.submit()"></li>
+        </form>
+          <li><a href="/cart" class="cartpage">
+            <span class="cartCounter"> <%= session.cart ? session.cart.totalQty : '' %> </span>
+            <i class="fa fa-shopping-cart" id="cart"></i></a></li>
+      </ul>
+  </div>
+
+  <div class="hamburger">
+    <span class="menu"> &#9776 </span>
+</div>
+</nav>    

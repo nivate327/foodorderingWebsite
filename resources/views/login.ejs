@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <%- include("../partials/link") -%>
+</head>
+<body>
+   
+    <!-- Navbar Section -->
+    <%- include("../partials/header") -%>
+
+    <div class="loginContainer">
+        <form action="/login" method="POST" class="login-form">
+            <% if(messages.error) {%>
+                <span style="color:red;"><%= messages.error %></span>
+                <%}%>
+                <br>
+            <label for="username">UserName</label>
+            <br>
+            <input type="text" class="username input" id="username" name="email" type="email" value="<%= messages.email %>">
+             <p id="usermsg"></p>
+            <br>
+            <label for="password">PassWord</label>
+            <br>
+            <input type="password" class="password input" id="password" name="password" type="password">
+            <p id="userpass"></p>
+            <br>
+            <div class="sign-forget">
+                <button class="loginbtn"  type="submit"> SignIn </button>
+                <a href="/ragister" class="fpass">Don't Have Account ?</a>
+            </div>
+        </form>
+    </div>
+    <script src="/js/responsive.js"></script>
+</body>
+</html>

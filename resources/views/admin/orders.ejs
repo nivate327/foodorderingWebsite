@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../../partials/link") -%>
+    <link rel="stylesheet" href="css/order.css">
+
+    <style>
+        .heading
+        {
+            font-size: 1.5rem;
+         margin-top: 3rem;
+         margin-bottom: 2rem;
+        }           
+        
+        i{
+         margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <%- include("../../partials/header") -%>
+ 
+    <section class="orders">
+        <div class="container">
+            <h1 class="heading"><i class="fas fa-hamburger"></i> All Orders</h1>
+            <div class="box">
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th class="thead"><i class="fas fa-hamburger"></i> Orders</th>
+                        <th class="thead"><i class="fas fa-user"></i> Customer</th>
+                        <th class="thead"><i class="fas fa-home"></i> Address</th>
+                        <th class="thead"><i class="fas fa-status"></i> Status</th>
+                        <th class="thead"><i class="fas fa-address"></i> PlacedAt</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTablebody">
+
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+     <script src="/javascipt/admin.js" type="module"></script>
+     <script src="/js/responsive.js"></script>
+</body>
+</html>

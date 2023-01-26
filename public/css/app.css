@@ -1,0 +1,892 @@
+/* This type of css support to all the page */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Slabo 27px', serif;
+}
+
+html{
+    min-height: 100%;
+}
+
+/** Navbar Section **/
+nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    position:sticky;
+    top:0;
+    cursor:pointer;
+    z-index: 1;
+}
+
+.hamburger
+{
+    margin-right: 2rem;
+    display: none;
+}
+
+.closebtn
+{
+    display: none;
+}
+
+.hamburger .menu{
+    color: white;
+    font-size: 1.4rem;
+}
+
+.nav-items
+{
+    display:flex;
+    align-items:center;
+    justify-content: right;
+    margin-top: .7rem;
+}
+
+.nav-items li{
+    list-style: none;
+    padding: 0px 1.6rem;
+}
+
+/* Logo */
+.logo{
+    display:flex;
+}
+
+.logo .fa {
+    font-size: 2.3rem;
+    padding-left: 4rem;
+    padding-top: 1.1rem;
+    color: white;
+}
+
+.logo h3 {
+    padding-left: .4rem;
+    padding-top: 1.3rem;
+    padding-bottom: .7rem;
+    color: white;
+}
+
+/* Navbar Background color */
+.background::before
+{
+    content: "";
+    background: rgb(0, 0, 0);
+    top:0;
+    right: 0;
+    left:0;
+    position:absolute;
+    z-index:-1;
+    width: 100%;
+    opacity:0.6;
+    height: 100%;
+}   
+
+/* Menu */
+.nav-items li a{
+    text-decoration: none;
+    color:white;
+    font-size:1.3rem;
+    font-weight: 100;
+}
+
+.nav-items li a i{
+    margin-right: 0.5rem;
+}
+
+/* Search btn */
+.nav-items li #search
+{
+    width: 7.9rem;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid white;
+    outline: none;
+    padding: .1rem .7rem;
+    font-size:1rem;
+    background: none;
+}
+
+.nav-items li a:hover
+{
+    color:rgba(207, 207, 207, 0.884);
+}
+
+/* Cart */
+#cart
+{
+    font-size:1.5rem;
+    color: black;
+    padding-right: .3rem;
+    
+}
+
+/** Home Section **/
+#home
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+#home::before
+{
+    content: "";
+    background: url("/img/food.jpg") no-repeat center center/cover;
+    top:0;
+    right: 0;
+    left:0;
+    position:absolute;
+    z-index:-1;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%; 
+}
+
+#a
+{
+    text-decoration: none;
+}
+
+footer #ter
+{
+    margin-left: 1rem;
+}
+
+footer #pri
+{
+    margin-left: 1rem;
+}
+
+/* Content part **/
+.content
+{
+    
+    height:37rem;
+    width:48rem;
+    margin-left:2rem;
+}
+
+/* content first paragraph */
+.content #first {
+    color: white;
+    margin-top: 5.3rem;
+    margin-left: 6.5rem;
+    margin-bottom: 4rem;
+    font-size: 2.4rem;
+}
+
+/* content second paragraph */
+.content #second {
+    color: white;
+    font-size: 1.6rem;
+    margin-left: 6.5rem;
+    margin-bottom: 3.2rem;
+    margin-top: 4rem;
+}
+
+/* content btn */
+.content #btn
+{
+    margin-left: 6rem;
+    background-color:white;
+    color: none;
+    border-radius: 2rem;
+    outline:none;
+    border: none;
+    font-size:1rem;
+    padding: 1rem 3.5rem;
+}
+
+/* content heading 1 */
+.content h1 {
+    color: white;
+    margin-left: 6.1rem;
+    border: 2px solid white;
+    padding: .5rem;
+    display: inline;
+    border-radius: .5rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* food img part*/
+.img
+{
+    display: flex;
+    align-items: center;
+    height:60rem;
+}   
+
+
+.img img{
+    height:60.9rem;
+}
+
+/* Menu Section */
+#menu-section
+{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+   margin-bottom: 2rem;
+}
+
+
+#menu-section h2{
+    text-align: left;
+    margin-top:3rem;
+    color:rgba(0, 0, 0, 0.815);
+}
+
+.menu-1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+    flex-wrap:wrap;
+    margin-top:1rem;
+}
+
+/*
+.menu-2{
+    display: flex;
+    justify-content: space-evenly;
+    height:330px;
+    flex-wrap:wrap;
+    width:100%;
+    align-items: center;
+}
+*/
+
+.card{
+    width:273px;
+    height:278px;
+    padding: 10px;
+   box-shadow: 0px 0px 3px 3px rgb(243 232 232);
+    border-radius: 5px;
+    border:none;
+    margin:15px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.03,1.03);
+  /*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+#search::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+#menu-section .menu-1 .card .p
+{
+    width:153px;
+    height:152px;
+    margin: auto;
+    display: block;
+}
+
+/*
+#menu-section .menu-2 .card .p
+{
+    width:153px;
+    height:152px;
+    margin: auto;
+    display: block;
+}
+*/
+
+#she
+{
+    width:204px;
+    height:154px;
+    margin: auto;
+    display: block; 
+}
+
+#poha
+{
+    width:233px;
+    height:153px;
+    margin: auto;
+    display: block;
+}
+
+#hyd
+{
+    width:196px;
+    height:149px;
+    margin: auto;
+    display: block; 
+}
+
+.card h3
+{
+    padding-top:6px;
+    text-align:center;
+}
+
+.order-price
+{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.order-price p
+{
+    margin-top:20px;
+    font-size: 16px;;
+
+}
+
+
+
+.order-price .add-btn
+{
+    padding: 8px 28px;
+    border:none;
+    border-radius: 18px;
+    background-color:rgba(0, 0, 0, 0.815);
+    color:white;
+    cursor: pointer;
+    margin-top:20px;
+    transition: all 0.8s ease-in-out;
+}
+
+.add-btn:hover
+{
+    background: rgb(54, 53, 53);
+    outline: none;
+}
+
+footer
+{
+    width:100%;
+    height: 60px;
+    color:white;
+    background: rgb(36, 35, 35);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin: auto;
+    top:100%;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.cartCounter
+{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+.cartpage
+{
+    border:1px solid white;
+    border-radius: 30px;
+    padding-top: .5rem;
+    padding-bottom: .3rem;
+    padding-right: .4rem;
+    padding-left: .9rem;
+    background: white;
+    color:black;
+    align-items: center;
+    margin-right: 2.3rem;
+}
+
+.cartpage:hover
+{
+    color:rgba(207, 207, 207, 0.884);
+}
+
+marquee
+{
+    background-color: rgb(235, 61, 61);
+    color: white;
+    font-family: 'Slabo 27px', serif;
+    padding: 1px;
+}
+
+/* Login Form */
+.loginContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.login-form
+{
+   /* border: 1px solid red; */
+    
+   box-shadow: 0 0 1.1rem rgb(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.login-form .input
+{
+    width: 16rem;
+    margin: 0.2rem 0;
+    outline: none;
+    border-radius: 5px;
+    border:none;
+    border:1px solid rgb(173, 173, 173);
+    padding: 0.1rem 0.5rem;
+}
+
+.input:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+
+.login-form label
+{
+    margin: 0.5rem 0;
+}
+
+.sign-forget
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign-forget .loginbtn
+{
+    border:none;
+    padding: 6px 30px;
+    color:#fff;
+    background:black;
+    outline: none;
+    border-radius: 5px;
+    outline: none;
+    transition: backgroud 0.5s ease-in-out;
+    margin-top: 0.5rem;
+}
+
+.loginbtn:hover{
+    background: rgb(54, 53, 53);
+    outline: none;
+}
+
+.fpass
+{
+    text-decoration: none;
+    margin-top: 0.7rem;
+}
+
+
+/* ragister form */
+
+.ragister-form
+{
+   /* border: 1px solid red; */
+    
+   box-shadow: 0 0 11px rgb(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.ragister-form .input
+{
+    width: 18rem;
+    margin: 0.2rem 0;
+    outline: none;
+    border-radius: 5px;
+    border:none;
+    border:1px solid rgb(173, 173, 173);
+    padding: 0.1rem 0.5rem;
+}
+
+.input:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+
+.ragister-form label
+{
+    margin: 0.5rem 0;
+}
+
+.sign-forget
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-forget .rbtn
+{
+    border:none;
+    padding: 6px 30px;
+    color:#fff;
+    background:black;
+    outline: none;
+    border-radius: 5px;
+    outline: none;
+    transition: backgroud 0.5s ease-in-out;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+}
+
+.rbtn:hover{
+    background: rgb(54, 53, 53);
+    outline: none;
+}
+
+.fpass
+{
+    text-decoration: none;
+    margin-top: 0.7rem;
+}
+
+
+.ragister-form p{
+    margin-bottom: 0;
+}
+
+.ragister-form
+{
+    box-shadow: 0 0 11px rgb(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+
+@media(max-width:1024px)
+{
+
+    .logo .fa {
+        padding-left: 2rem;
+    }
+
+    .nav-items
+    {
+        display: none;
+    }
+
+    .hamburger
+    {
+        display: block;
+        transition: all 0.4s ease-in-out;
+        margin-right: 2rem;
+    }
+
+    .hamburger:hover
+    {
+        color: whitesmoke;
+    }
+    
+
+    .slidebar
+    {
+        width:0;
+        opacity: 1;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+        height: 100vh;
+        top:0;
+        left:-42px;
+        right: 0;
+        background: rgb(45 45 45);
+        margin: 0;
+        bottom: 0;
+    }
+
+    .nav-items li{
+        list-style: none;
+        padding: .9rem 4.2rem;
+    }
+
+    footer
+    {
+        height: 77px;
+    }
+
+
+    .closebtn
+    {
+        display: block;
+        margin-left: 7rem;
+        font-size: 1.6rem !important;
+    }
+
+    .cartpage
+    {
+        padding-left: .5rem;
+    }
+
+    .content #first {
+        color: white;
+        margin-top: 3.3rem;
+        margin-left: 6.5rem;
+        margin-bottom: 3rem;
+        font-size: 2.4rem;
+    }
+
+    .content #second {
+        color: white;
+        font-size: 1.6rem;
+        margin-left: 6.5rem;
+        margin-bottom: 2.2rem;
+        margin-top: 4rem;
+    }
+
+    .content {
+        height: 32rem;
+    }
+
+}
+
+@media(max-width:800px)
+{
+ /** Home Section **/
+
+/* Content part **/
+.content
+{
+    
+    height:32rem;
+    width:48rem;
+    margin-left:2rem;
+}
+
+/* content first paragraph */
+.content #first {
+       font-size: 2rem;
+}
+
+/* content second paragraph */
+.content #second {
+   font-size: 1.4rem;
+}
+
+/* content btn */
+.content #btn
+{
+    padding: .8rem 2.5rem;
+}
+
+/* content heading 1 */
+.content h1 {
+       font-size: 3rem;
+}
+
+
+}
+
+@media(max-width:600px)
+{
+ /** Home Section **/
+
+/* Content part **/
+.content
+{
+    
+    height:32rem;
+    width:48rem;
+    margin-left:2rem;
+}
+
+/* content first paragraph */
+.content #first {
+       font-size: 2rem;
+       margin-left: 1.5rem;
+}
+
+/* content second paragraph */
+.content #second {
+   font-size: 1.4rem;
+   margin-left: 1.2rem;
+}
+
+/* content btn */
+.content #btn
+{
+    padding: .8rem 2.5rem;
+    margin-left: 1rem;
+}
+
+/* content heading 1 */
+.content h1 {
+       font-size: 3rem;
+       margin-left: 1.4rem;
+}
+
+.box
+{
+    overflow-x: auto;
+    
+}
+
+}
+
+
+
+
+@media(max-width:480px)
+{
+ /** Home Section **/
+
+/* Content part **/
+.content #first {
+    font-size: 1.6rem;
+    margin-left: 1.4rem;
+}
+/* content second paragraph */
+.content #second {
+    font-size: 1.2rem;
+    margin-left: 1.1rem;
+}
+
+/* content btn */
+.content #btn {
+    padding: 0.7rem 1.8rem;
+    margin-left: 1rem;
+}
+
+/* content heading 1 */
+.content h1 {
+    font-size: 2.2rem;
+    margin-left: 1.2rem;
+}
+
+
+.ragister-form {
+    padding: 0px;
+}
+
+.ragister-form label {
+    margin: 0.5rem 35px;
+}
+
+.ragister-form .input {
+    width: 13rem;
+    margin: 0.2rem 35px;
+    
+}
+
+.signup-forget .rbtn {
+    padding: 6px 18px;
+    margin-right: .2rem;
+    margin-left: 1.3rem;
+}
+
+.fpass {
+    
+    font-size: .95rem;
+}
+
+th
+{
+    font-size: 1rem;
+}
+
+tr
+{
+    font-size: .9rem;
+}
+
+.box
+{
+    overflow-x: auto;
+    
+}
+
+
+}
+
+@media(max-width:320px)
+{
+ /** Home Section **/
+
+/* Content part **/
+.content #first {
+    font-size: 1.6rem;
+    margin-left: 2.4rem;
+}
+/* content second paragraph */
+.content #second {
+    font-size: 1.2rem;
+    margin-left: 0.1rem;
+}
+/* content btn */
+.content #btn {
+    padding: 0.7rem 1.8rem;
+    margin-left: 4rem;
+}
+
+/* content heading 1 */
+.content h1 {
+    font-size: 2rem;
+    margin-left: 0.6rem;
+}
+
+.content
+{ 
+    height:31rem;
+    width:48rem;
+    margin-left:2rem;
+}
+
+.login-form .input {
+    width: 14rem;
+    margin: 0.2rem 4px;
+}
+
+.login-form label {
+    margin: 0.5rem 6px;
+}
+
+.sign-forget .loginbtn {
+    padding: 6px 23px;
+}
+
+.ragister-form {
+    padding: 0px;
+}
+
+.ragister-form label {
+    margin: 0.5rem 35px;
+}
+
+.ragister-form .input {
+    width: 13rem;
+    margin: 0.2rem 35px;
+    
+}
+
+.signup-forget .rbtn {
+    padding: 6px 18px;
+    margin-right: .2rem;
+    margin-left: 1.3rem;
+}
+
+.fpass {
+    
+    font-size: .95rem;
+}
+
+}

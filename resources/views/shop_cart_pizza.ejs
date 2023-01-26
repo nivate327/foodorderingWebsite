@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <%- include('../partials/link.ejs') %>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <%- include('../partials/header.ejs') %>
+
+    <!-- Outer Div -->
+    <div class="outer-div">
+        <div class="main-div">
+            <!-- left side section -->
+            
+            <div class="img-section">
+                <input type="hidden" value="<%= food._id %>">
+                <div>
+                    <img src="/img/<%= food.image %>" alt="burger-not-found" title="Burger-Image" class="main-img" onclick="mainimg()">
+                </div>
+                <div class="related-image">
+                    <img src="/img/<%= food.img2 %>" alt="img-not-found" class="image-related" onclick="imgchange()">
+                    <img src="/img/<%= food.img3 %>" alt="img-not-found" class="image-related" onclick="imgchange2()">
+                    <img src="/img/<%= food.img4 %>" alt="img-not-found" class="image-related" onclick="imgchange3()">
+                </div>
+            </div>
+
+            <!-- right side section -->
+            <div class="right-side">
+                <div class="product-details-and-qty">
+                    <div>
+                        <h1><%= food.name %></h1>
+                        <p><%= food.description %></p>
+                    </div>
+                
+
+                <!-- Qty number -->
+                <div>
+                    <ul class="Qty">
+                        <li><button class="previous"><i class="fas fa-minus"></i></button></li>
+                        <li><input type="text" value="1" class="qty-input"></li>
+                        <li><button class="next"><i class="fas fa-plus"></i></button></li>
+                    </ul>
+                </div>
+               </div>
+                 <!-- buy-fav-price -->
+                <div class="buy-fav-price">
+                
+                    <div class="price">RS : <span id="price"><%= food.price %></span></div>
+                    <button class="buy" data-food="<%= JSON.stringify(food) %>"> Buy Now </button>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+
+     <!-- footer section -->
+     <%- include('../partials/footer.ejs') %>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <script src="/javascipt/app.js" type="module"></script>
+     <script src="/js/responsive.js"></script>
+     <script>
+        let previous=document.querySelector(".previous");
+        let next=document.querySelector(".next");
+      let price=document.getElementById("price");
+      let Qty=document.querySelector(".qty-input");
+        let data;
+
+        //console.log(Qty.value=2);
+        previous.addEventListener("click", ()=>
+        {
+           let Qty=document.querySelector(".qty-input");
+ 
+           if(Qty.value <= 0)
+           {
+               Qty.value=0;
+           }
+           else{
+               Qty.style.background="white";
+               Qty.style.color="black";
+               Qty.value=parseInt(Qty.value)-1;
+               price.innerHTML=`${parseInt(215)*parseInt(Qty.value)}`;
+           }
+        });
+
+            //console.log(Qty.value=2);
+       next.addEventListener("click", ()=>
+        {
+           let Qty=document.querySelector(".qty-input");
+ 
+           if(Qty.value >= 5)
+           {
+               Qty.value=5;
+               Qty.style.background="red";
+               Qty.style.color="white";
+           }
+           else{
+               Qty.style.background="white";
+               Qty.style.color="black";
+               Qty.value=parseInt(Qty.value)+1;
+               price.innerHTML=`${parseInt(215)*parseInt(Qty.value)}`;
+
+           }
+        });
+
+        
+
+        function imgchange() {
+            let mainimg=document.querySelector(".main-img");
+        
+            mainimg.setAttribute("src","/img/<%= food.img2 %>"); 
+        }
+
+        function imgchange2() {
+            let mainimg=document.querySelector(".main-img");
+           
+            mainimg.setAttribute("src","/img/<%= food.img3 %>");
+        }
+
+        function imgchange3() {
+            let mainimg=document.querySelector(".main-img");
+
+            mainimg.setAttribute("src","/img/<%= food.img4 %>");
+        }
+
+        function mainimg() {
+             let mainimg=document.querySelector(".main-img");
+
+            mainimg.setAttribute("src","/img/<%= food.image %>");
+        }
+    </script>
+</body>
+</html>

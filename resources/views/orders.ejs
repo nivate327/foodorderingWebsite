@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/link") -%>
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <%- include("../partials/header") -%>
+ 
+    <section class="orders">
+        <div class="container">
+            <h1 class="heading"><i class="fas fa-hamburger"></i> All Orders</h1>
+            
+            <% if(messages.sucess) {%>
+            <div class="sucessalt" role="alert">
+               <p id="alertmsg" style="color: white; background-color: rgb(7, 189, 7); padding: 0.4rem; border-radius: 4px;"><%= messages.sucess%></p>
+            </div>
+            <% }%>
+            <div class="box">
+           <table class="table">
+                <thead>
+                    <tr>
+                        <th class="thead"><i class="fas fa-hamburger"></i> Orders</th>
+                        <th class="thead"><i class="fas fa-home"></i> Address</th>
+                        <th class="thead"><i class="fas fa-phone"></i> Phone</th>
+                        <th class="thead"><i class="fas fa-clock"></i> Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(ord.length>0){ %>
+                        <% ord.forEach(function(val){ %>
+                            <tr>
+                                <td class="tbody"> <a href="/orders/<%= val._id%>"><%= val._id %></a> </td>
+                                <td class="tbody"> <%= val.address %> </td>
+                                <td class="tbody"> <%= val.phone %> </td>
+                                <td class="tbody"> <%= moment(val.datetime).format('hh:mm A') %></td>
+                            </tr>
+                        
+                        <% })%>
+                         
+                    <% } else { %>
+
+                        <tr>
+                            <td id="no">No Such Food Orders Available</td>
+                        </tr>
+                   <%}%>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascipt/removealert.js" type="module"></script>
+    <script src="/js/responsive.js"></script>
+</body>
+</html>

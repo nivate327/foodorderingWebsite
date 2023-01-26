@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../../partials/link") -%>
+</head>
+<body>
+
+    <%- include("../../partials/header") -%>
+
+    <section class="status">
+        <div class="container">
+            <div class="mainbox">
+                <div class="head">
+                    <h4>Track Delivery Status</h4>
+                    <h6><%= orderdata._id %></h6>
+                    <input type="hidden" name="hidden" id="hidden" value="<%= JSON.stringify(orderdata) %>">
+                </div>
+
+                <ul>
+                    <li class="li" data-status="order_placed"><span>Order Placed</span></li>
+                    <li class="li" data-status="confirmed"><span>Order Confirmation</span><small></small></li>
+                    <li class="li" data-status="prepared"><span>Preparation</span></li>
+                    <li class="li" data-status="delivered"><span>Out of Delivery</span></li>
+                    <li class="li" data-status="completed"><span>Complete</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+     <script src="/javascipt/admin.js" type="module"></script>
+     <script src="/js/responsive.js"></script>
+</body>
+</html>

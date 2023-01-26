@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/link.ejs') %>
+    <link rel="stylesheet" href="/css/category.css">
+    
+</head>
+<body>
+    <!-- Navbar Section -->
+    <%- include('../partials/header.ejs') %>
+    <form action="/search" method="post">
+    <select class="menu-category" name="menus" onchange="this.form.submit()"> 
+        <option>select</option>
+        <option value="south indian">south indian</option>
+        <option value="Panjabi Food">Panjabi Food</option>
+        <option value="Fast Food">Fast Food</option>
+        <option value="Chinese Food">Chinese Food</option>
+        <option value="BreakFast">BreakFast</option>
+        <option value="All">All</option>
+    </select>
+    </form> 
+    <section id="menu-section">
+        <!-- Menu 1-->
+        
+    <% if(food.length>0) {%>
+        <div class="menu-1">
+            <% food.forEach(function(food) {%>
+    
+           
+            <div class="card" id="card1">
+                <img src="/img/<%= food.image %>" alt="hi" class="p"></img>
+                <h3><%= food.name %></h3>
+                <div class="order-price">
+                    <p>Rs- <span id=""><%= food.price %></span></p>
+                    <a href="/<%= food.link %>/<%= food.id %>"><button class="add-btn"> Add </button></a>
+                </div>
+            </div>
+    
+            <% }) %> 
+        </div> 
+    <% } else {%>
+        <div>
+            <h4>No Such Food Found<h4>
+        </div>
+    <% }%>
+</section>    
+
+ <!-- footer section -->
+ <script src="/js/responsive.js"></script>
+</body>
+</html>

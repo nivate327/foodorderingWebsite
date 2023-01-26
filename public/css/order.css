@@ -1,0 +1,25 @@
+.heading
+{
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+i{
+    margin-right: 0.5rem;
+}
+
+#no
+{
+    display: block;
+}
+
+a{
+    color: rgb(17, 196, 17);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color:greenyellow;
+}

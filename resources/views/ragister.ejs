@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragister Page</title>
+    <%- include("../partials/link") -%>
+</head>
+<body>
+   
+    <!-- Navbar Section -->
+    <%- include("../partials/header") -%>
+
+    <div class="loginContainer">
+        <form action="/ragister" method="POST" class="ragister-form">
+            <% if(messages.error) {%>
+            <span style="color:red;"><%= messages.error %></span>
+            <%}%>
+            <br>
+            <label for="username">Name</label>
+            <br>
+            <input type="text" class="name input" id="name" name="name" value="<%= messages.name %>">
+            <p id="user"></p>
+            <br>
+
+            <label for="emailid">Email ID</label>
+            <br>
+            <input type="text" class="emailid input" id="emailid" name="email" value="<%= messages.email %>">
+             <p id="emailmsg"></p>
+            <br>
+           
+            <label for="password">PassWord</label>
+            <br>
+            <input type="password" class="password input" id="password" name="password">
+            <p id="userpass"></p>
+            <br>
+            <div class="signup-forget">
+                <button class="rbtn" type="submit"> SignUp </button>
+                <a href="/login" class="fpass">I have Already Account ?</a>
+            </div>
+        </form>
+    </div>
+        <script src="/js/responsive.js"></script>
+</body>
+</html>

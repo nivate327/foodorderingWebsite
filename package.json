@@ -1,0 +1,37 @@
+{
+  "name": "food_delivery_website",
+  "version": "1.0.0",
+  "description": "food delivery website",
+  "main": "index.js",
+  "author": "RSPMTY GROUP",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "serve": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "3",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "ejs-lint": "^1.2.0",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.4",
+    "parcel-bundler": "1.12.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.0",
+    "nodemon": "^2.0.6"
+  }
+}

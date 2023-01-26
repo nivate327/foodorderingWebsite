@@ -1,0 +1,235 @@
+
+/* status css*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.status .container
+{
+    width: 100vw;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainbox
+{
+    height: 30rem;
+    width: 60rem;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+h6
+{
+    color: rgb(6, 214, 6);
+}
+
+ul{
+    margin-bottom: 1.5rem;
+}
+
+ul .li 
+{
+    list-style: none;
+    position: relative;
+    margin-bottom: 3rem;
+    margin-left: 5.4rem;
+}
+
+ul .li span{
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+ul .li span::after
+{
+    position: absolute;
+    content: "";
+    top:50%;
+    left:-10px;
+    background: black;
+    width:10px;
+    height:10px;
+    right: 5px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ul .li span::before
+{
+    font-family: "Font Awesome 5 Free";
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top:50%;
+    left:-90px;
+    transform: translateY(-50%);
+}
+
+ul .li:nth-child(1) span::before
+{
+    content: "\f46c";
+}
+
+ul .li:nth-child(2) span::before
+{
+    content: "\f560";
+}
+
+ul .li:nth-child(3) span::before
+{
+    content: "\f818";
+}
+
+ul .li:nth-child(4) span::before
+{
+    content: "\f0d1";
+}
+
+ul .li:nth-child(5) span::before
+{
+    content: "\f118";
+}
+
+
+ul .li::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 124%;
+    top:24px;
+    left:-6px;
+    background: black;
+    margin-top: 10px;
+}
+
+
+ul .li:nth-child(5) span::after
+{
+    box-shadow: 0 30px 1px 20px white;
+}
+
+ul .stepCompleted::before
+{
+    background: rgb(207, 207, 207);
+}
+
+
+ul .stepCompleted span::after{
+    background: rgb(207, 207, 207);
+}
+
+ul .stepCompleted span{
+    color: rgb(207, 207, 207);
+}
+
+ul .current span::after{
+    background: rgb(6, 214, 6);
+}
+
+ul .current span{
+    color: rgb(6, 214, 6);
+}
+
+ul li small{
+    margin-left: 32rem;
+    
+}
+
+@media(max-width:990px)
+{
+    ul li small {
+        margin-left: 21rem;
+    }
+}
+
+@media(max-width:800px)
+{
+    ul li small {
+        margin-left: 17rem;
+    }
+}
+
+
+
+@media(max-width:600px)
+{
+    ul li small {
+        margin-left: 10rem;
+    }
+
+    ul .li::before {
+        top: 19px;
+        
+    }
+
+    ul .li span::before {
+        font-size: 24px;
+    }
+
+    ul .li { 
+        margin-bottom: 2.4rem;
+        font-size: 1rem;
+    }
+
+    .head h4
+    {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width:480px)
+{
+    .head {
+        flex-direction: column;
+        display: inline-block;
+        justify-content: left;
+    }
+
+    .head h3,h4
+    {
+        text-align: left !important;
+    }
+
+    ul .li {
+        margin-bottom: 2.4rem;
+        font-size: .95rem;
+    }
+
+    ul .li::before {
+        left: -17px;
+        
+    }
+
+    ul .li span::before {
+        left: -79px;
+       
+    }
+
+    ul .li span::after {
+        
+        left: -21px;
+       
+    }
+
+    ul li small {
+        margin-left: 2rem;
+    }
+
+    ul .li span {
+        position: relative;
+        padding-left: 0.95rem;
+    }
+}
