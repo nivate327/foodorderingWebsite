@@ -2,10 +2,11 @@
   "name": "food_delivery_website",
   "version": "1.0.0",
   "description": "food delivery website",
-  "main": "index.js",
+  "main": "server.js",
   "author": "RSPMTY GROUP",
   "license": "MIT",
   "scripts": {
+    "start":"node server.js",
     "dev": "nodemon server.js",
     "serve": "node server.js"
   },
@@ -16,7 +17,7 @@
     "connect-mongo": "3",
     "connect-mongodb-session": "^2.4.1",
     "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "ejs": "^3.1.5",
     "ejs-lint": "^1.2.0",
     "express": "^4.17.1",
